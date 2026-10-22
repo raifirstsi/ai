@@ -1,0 +1,9 @@
+[Unit]
+Description=Synchronize RAIFIRST AI source to GitHub
+After=network-online.target
+[Service]
+Type=oneshot
+ExecStart=/opt/raifirst-ai/source/deploy/raifirst/sync.sh
+TimeoutStartSec=300
+Nice=10
+UMask=0077

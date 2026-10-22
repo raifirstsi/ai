@@ -52,7 +52,7 @@ export function DurationChart({ data, loading, granularity }: DurationChartProps
             yAxisId="left"
             dataKey="avg_duration_ms"
             name={t("analytics.durationChart.avgDuration")}
-            fill="#E87820"
+            fill="#898989"
             radius={[2, 2, 0, 0]}
             isAnimationActive={false}
           />
@@ -61,9 +61,9 @@ export function DurationChart({ data, loading, granularity }: DurationChartProps
             type="monotone"
             dataKey="errorRate"
             name={t("analytics.durationChart.errorRate")}
-            stroke="#ef4444"
+            stroke="#686868"
             strokeWidth={2}
-            dot={{ r: 3, fill: "#ef4444" }}
+            dot={{ r: 3, fill: "#686868" }}
             isAnimationActive={false}
           />
         </ComposedChart>

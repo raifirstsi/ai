@@ -22,7 +22,7 @@ interface SigmaGraphFiltersProps {
 }
 
 export function SigmaGraphFilters({
-  graph, typeColors, defaultColor = "#9ca3af",
+  graph, typeColors, defaultColor = "#a2a2a2",
   hiddenTypes, onHiddenTypesChange,
   collapsed, onCollapsedChange,
 }: SigmaGraphFiltersProps) {

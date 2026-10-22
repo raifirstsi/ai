@@ -1,0 +1,10 @@
+[Unit]
+Description=Encrypt and back up RAIFIRST AI data to GitHub
+After=docker.service network-online.target
+[Service]
+Type=oneshot
+ExecStart=/opt/raifirst-ai/source/deploy/raifirst/backup.sh
+TimeoutStartSec=900
+Nice=15
+IOSchedulingClass=idle
+UMask=0077

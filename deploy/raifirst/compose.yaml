@@ -1,0 +1,57 @@
+name: raifirst-ai
+services:
+  postgres:
+    image: pgvector/pgvector:pg18
+    environment:
+      POSTGRES_USER: raifirst
+      POSTGRES_DB: raifirst
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?required}
+    volumes:
+      - /opt/raifirst-ai/state/postgres:/var/lib/postgresql
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U raifirst -d raifirst"]
+      interval: 5s
+      timeout: 5s
+      retries: 20
+    mem_limit: 1g
+    cpus: 1.0
+    restart: unless-stopped
+  gateway:
+    image: raifirst-ai:${RAIFIRST_RELEASE:-current}
+    build:
+      context: ../..
+      args:
+        ENABLE_EMBEDUI: "true"
+        ENABLE_PYTHON: "true"
+        VERSION: ${GOCLAW_VERSION:-v3.14.0-raifirst}
+        COMMIT_SHA: ${GOCLAW_COMMIT_SHA:-unknown}
+    ports:
+      - "127.0.0.1:18790:18790"
+    environment:
+      GOCLAW_HOST: 0.0.0.0
+      GOCLAW_PORT: 18790
+      GOCLAW_CONFIG: /app/data/config.json
+      GOCLAW_DATA_DIR: /app/data
+      GOCLAW_WORKSPACE: /app/workspace
+      GOCLAW_SKILLS_DIR: /app/data/skills
+      GOCLAW_GATEWAY_TOKEN: ${GOCLAW_GATEWAY_TOKEN:?required}
+      GOCLAW_ENCRYPTION_KEY: ${GOCLAW_ENCRYPTION_KEY:?required}
+      GOCLAW_POSTGRES_DSN: postgres://raifirst:${POSTGRES_PASSWORD:?required}@postgres:5432/raifirst?sslmode=disable
+      GOCLAW_ALLOWED_ORIGINS: https://ai.raifirst.si
+      TZ: Asia/Ho_Chi_Minh
+    volumes:
+      - /opt/raifirst-ai/state/data:/app/data
+      - /opt/raifirst-ai/state/workspace:/app/workspace
+    depends_on:
+      postgres:
+        condition: service_healthy
+    init: true
+    security_opt: [no-new-privileges:true]
+    cap_drop: [ALL]
+    cap_add: [SETUID, SETGID, CHOWN]
+    tmpfs:
+      - /tmp:rw,noexec,nosuid,size=256m
+    mem_limit: 1536m
+    cpus: 1.5
+    pids_limit: 256
+    restart: unless-stopped

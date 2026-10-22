@@ -33,25 +33,25 @@ export const TTS_PROVIDERS: Record<TtsProviderId, TtsProviderMeta> = {
   openai: {
     id: "openai",
     title: "OpenAI",
-    color: "#10a37f",
+    color: "#818181",
     desc: "Reliable TTS via OpenAI API",
   },
   edge: {
     id: "edge",
     title: "Edge (Free)",
-    color: "#0078d4",
+    color: "#656565",
     desc: "Microsoft Edge TTS — free, no API key required",
   },
   minimax: {
     id: "minimax",
     title: "MiniMax",
-    color: "#6200ea",
+    color: "#262626",
     desc: "MiniMax TTS with dynamic voice library",
   },
   gemini: {
     id: "gemini",
     title: "Google Gemini",
-    color: "#1a73e8",
+    color: "#696969",
     desc: "Gemini 3.1 Flash TTS — 70+ languages, multi-speaker, audio tags (preview)",
   },
 };

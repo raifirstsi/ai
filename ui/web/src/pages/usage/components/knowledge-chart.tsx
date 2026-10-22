@@ -47,10 +47,10 @@ export function KnowledgeChart({ data, loading, granularity }: KnowledgeChartPro
           <YAxis tick={{ fontSize: 11 }} width={40} />
           <Tooltip />
           <Legend />
-          <Line type="monotone" dataKey="memory_docs" name={t("analytics.knowledgeChart.memoryDocs")} stroke="#E85D24" strokeWidth={2} dot={false} isAnimationActive={false} />
-          <Line type="monotone" dataKey="memory_chunks" name={t("analytics.knowledgeChart.memoryChunks")} stroke="#F8D080" strokeWidth={2} dot={false} isAnimationActive={false} />
-          <Line type="monotone" dataKey="kg_entities" name={t("analytics.knowledgeChart.kgEntities")} stroke="#E87820" strokeWidth={2} dot={false} isAnimationActive={false} />
-          <Line type="monotone" dataKey="kg_relations" name={t("analytics.knowledgeChart.kgRelations")} stroke="#F0A020" strokeWidth={2} dot={false} isAnimationActive={false} />
+          <Line type="monotone" dataKey="memory_docs" name={t("analytics.knowledgeChart.memoryDocs")} stroke="#767676" strokeWidth={2} dot={false} isAnimationActive={false} />
+          <Line type="monotone" dataKey="memory_chunks" name={t("analytics.knowledgeChart.memoryChunks")} stroke="#d3d3d3" strokeWidth={2} dot={false} isAnimationActive={false} />
+          <Line type="monotone" dataKey="kg_entities" name={t("analytics.knowledgeChart.kgEntities")} stroke="#898989" strokeWidth={2} dot={false} isAnimationActive={false} />
+          <Line type="monotone" dataKey="kg_relations" name={t("analytics.knowledgeChart.kgRelations")} stroke="#a8a8a8" strokeWidth={2} dot={false} isAnimationActive={false} />
         </LineChart>
       </ResponsiveContainer>
     </ChartWrapper>

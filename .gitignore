@@ -109,3 +109,14 @@ ui/web/nginx.staging.conf
 **/debug-*.log
 /*.sql
 scripts/docker-patch-*.sql
+
+# RAIFIRST runtime and recovery material are always outside source control.
+*.agekey
+*.pem
+*.key
+*.dump
+*.tar.age
+credentials/
+secrets/
+/state/
+/backups/

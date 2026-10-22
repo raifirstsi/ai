@@ -47,7 +47,7 @@ export function EvolutionMetricsCharts({ toolAggs, retrievalAggs, loading }: Evo
                 name={t("detail.evolution.successRate")}
                 radius={[3, 3, 0, 0]}
                 isAnimationActive={false}
-                fill="#22c55e"
+                fill="#9b9b9b"
               />
             </BarChart>
           </ResponsiveContainer>
@@ -75,7 +75,7 @@ export function EvolutionMetricsCharts({ toolAggs, retrievalAggs, loading }: Evo
               <Bar
                 dataKey="usage_rate"
                 name={t("detail.evolution.usageRate")}
-                fill="#3b82f6"
+                fill="#7b7b7b"
                 radius={[3, 3, 0, 0]}
                 isAnimationActive={false}
               />

@@ -5,11 +5,11 @@ import { getNodeSize, truncateMiddle } from "@/components/graph/graph-utils";
 
 // Solid colors per entity type
 export const KG_TYPE_COLORS: Record<string, string> = {
-  person: "#E85D24", organization: "#ef4444", project: "#22c55e",
-  product: "#f97316", technology: "#3b82f6", task: "#f59e0b",
-  event: "#ec4899", document: "#8b5cf6", concept: "#a78bfa", location: "#14b8a6",
+  person: "#767676", organization: "#686868", project: "#9b9b9b",
+  product: "#898989", technology: "#7b7b7b", task: "#a6a6a6",
+  event: "#717171", document: "#717171", concept: "#999999", location: "#949494",
 };
-export const KG_DEFAULT_COLOR = "#9ca3af";
+export const KG_DEFAULT_COLOR = "#a2a2a2";
 
 /** Compute degree (edge count) for each entity id. */
 export function computeDegreeMap(entities: KGEntity[], relations: KGRelation[]): Map<string, number> {

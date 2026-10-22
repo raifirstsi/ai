@@ -7,25 +7,25 @@ import { getNodeSize, truncateMiddle } from "@/components/graph/graph-utils";
 // Light mode: Tailwind -600 variants for contrast on white/light backgrounds
 // Dark mode: Tailwind -400 variants for visibility on dark backgrounds
 export const VAULT_TYPE_COLORS_LIGHT: Record<string, string> = {
-  context: "#2563eb",  // blue-600 (matches text-blue-600)
-  memory: "#9333ea",   // purple-600 (matches text-purple-600)
-  note: "#d97706",     // amber-600 (matches text-amber-600)
-  skill: "#059669",    // emerald-600 (matches text-emerald-600)
-  episodic: "#ea580c", // orange-600 (matches text-orange-600)
-  media: "#e11d48",    // rose-600 (matches text-rose-600)
-  document: "#0891b2", // cyan-600 (matches text-cyan-600)
+  context: "#606060",  // blue-600 (matches text-blue-600)
+  memory: "#555555",   // purple-600 (matches text-purple-600)
+  note: "#848484",     // amber-600 (matches text-amber-600)
+  skill: "#747474",    // emerald-600 (matches text-emerald-600)
+  episodic: "#727272", // orange-600 (matches text-orange-600)
+  media: "#4a4a4a",    // rose-600 (matches text-rose-600)
+  document: "#767676", // cyan-600 (matches text-cyan-600)
 };
 export const VAULT_TYPE_COLORS_DARK: Record<string, string> = {
-  context: "#60a5fa",  // blue-400 (matches dark:text-blue-400)
-  memory: "#c084fc",   // purple-400 (matches dark:text-purple-400)
-  note: "#fbbf24",     // amber-400 (matches dark:text-amber-400)
-  skill: "#34d399",    // emerald-400 (matches dark:text-emerald-400)
-  episodic: "#fb923c", // orange-400 (matches dark:text-orange-400)
-  media: "#fb7185",    // rose-400 (matches dark:text-rose-400)
-  document: "#22d3ee", // cyan-400 (matches dark:text-cyan-400)
+  context: "#9c9c9c",  // blue-400 (matches dark:text-blue-400)
+  memory: "#999999",   // purple-400 (matches dark:text-purple-400)
+  note: "#c1c1c1",     // amber-400 (matches dark:text-amber-400)
+  skill: "#adadad",    // emerald-400 (matches dark:text-emerald-400)
+  episodic: "#a2a2a2", // orange-400 (matches dark:text-orange-400)
+  media: "#909090",    // rose-400 (matches dark:text-rose-400)
+  document: "#afafaf", // cyan-400 (matches dark:text-cyan-400)
 };
-const DEFAULT_COLOR_LIGHT = "#475569"; // slate-600
-const DEFAULT_COLOR_DARK = "#94a3b8";  // slate-400
+const DEFAULT_COLOR_LIGHT = "#535353"; // slate-600
+const DEFAULT_COLOR_DARK = "#a1a1a1";  // slate-400
 
 /** Get node color based on doc type and theme */
 export function getVaultNodeColor(docType: string, isDark: boolean): string {
@@ -69,7 +69,7 @@ export function buildVaultGraphFromDTO(nodes: VaultGraphNode[], edges: VaultGrap
     if (nodeIds.has(e.from) && nodeIds.has(e.to) && !graph.hasEdge(e.from, e.to)) {
       graph.addEdgeWithKey(e.id, e.from, e.to, {
         label: e.type, type: "curvedArrow",
-        color: "#a1a1aa", size: 0.4,
+        color: "#a2a2a2", size: 0.4,
       });
     }
   }
@@ -117,7 +117,7 @@ export function buildVaultGraph(
         graph.addEdgeWithKey(link.id, link.from_doc_id, link.to_doc_id, {
           label: link.link_type,
           type: "curvedArrow",
-          color: "#a1a1aa", // zinc-400, lighter gray
+          color: "#a2a2a2", // zinc-400, lighter gray
           size: 0.4,
         });
       }

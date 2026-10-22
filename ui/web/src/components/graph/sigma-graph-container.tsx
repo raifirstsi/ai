@@ -37,9 +37,9 @@ function useThemeColors() {
   const isDark = theme === "dark" || (theme === "system" && systemDark);
   return {
     isDark,
-    labelColor: isDark ? "#e2e8f0" : "#1e293b",
-    edgeColor: isDark ? "#71717a" : "#d4d4d8",
-    highlightEdgeColor: isDark ? "#d4d4d8" : "#3f3f46",
+    labelColor: isDark ? "#e7e7e7" : "#282828",
+    edgeColor: isDark ? "#727272" : "#d4d4d4",
+    highlightEdgeColor: isDark ? "#d4d4d4" : "#404040",
   };
 }
 

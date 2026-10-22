@@ -66,7 +66,7 @@ export function SigmaGraphMinimap({ sigma, graph, size = 140 }: SigmaGraphMinima
       const y = ((attrs.y as number) - bounds.minY) * scale + offsetY;
       ctx.beginPath();
       ctx.arc(x, y, 1.5, 0, Math.PI * 2);
-      ctx.fillStyle = (attrs.color as string) || "#9ca3af";
+      ctx.fillStyle = (attrs.color as string) || "#a2a2a2";
       ctx.fill();
     });
 
@@ -83,10 +83,10 @@ export function SigmaGraphMinimap({ sigma, graph, size = 140 }: SigmaGraphMinima
     const vw = vx2 - vx1;
     const vh = vy2 - vy1;
 
-    ctx.strokeStyle = "rgba(59, 130, 246, 0.7)";
+    ctx.strokeStyle = "rgba(123, 123, 123, 0.7)";
     ctx.lineWidth = 1.5;
     ctx.strokeRect(vx1, vy1, vw, vh);
-    ctx.fillStyle = "rgba(59, 130, 246, 0.08)";
+    ctx.fillStyle = "rgba(123, 123, 123, 0.08)";
     ctx.fillRect(vx1, vy1, vw, vh);
   }, [sigma, graph, size, getBounds]);
 

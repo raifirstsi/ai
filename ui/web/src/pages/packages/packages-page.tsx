@@ -48,7 +48,7 @@ function isValidTab(v: string | null): v is TabId {
 function TabLoader() {
   return (
     <div className="py-8 flex justify-center text-muted-foreground">
-      <img src="/goclaw-icon.svg" alt="" className="h-6 w-6 animate-pulse opacity-40" />
+      <img src="/raifirst-mark.png" alt="" className="raifirst-mark h-6 w-6 animate-pulse opacity-40" />
     </div>
   );
 }

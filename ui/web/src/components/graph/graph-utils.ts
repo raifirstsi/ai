@@ -3,10 +3,10 @@ import type Graph from "graphology";
 
 /** 16-color palette for community detection — high contrast, distinct hues. */
 const COMMUNITY_PALETTE = [
-  "#e6194B", "#3cb44b", "#4363d8", "#f58231",
-  "#42d4f4", "#f032e6", "#bfef45", "#fabed4",
-  "#469990", "#dcbeff", "#9A6324", "#ffe119",
-  "#800000", "#aaffc3", "#808000", "#000075",
+  "#484848", "#939393", "#656565", "#959595",
+  "#b7b7b7", "#676767", "#d9d9d9", "#cccccc",
+  "#878787", "#c9c9c9", "#6a6a6a", "#d9d9d9",
+  "#1b1b1b", "#e9e9e9", "#777777", "#080808",
 ] as const;
 
 /** Run Louvain community detection and assign `community` + `color` attrs.
@@ -105,7 +105,7 @@ export const SIGMA_SETTINGS = {
   /** Grid cell size for label collision avoidance */
   labelGridCellSize: 200,
   /** Default edge color (overridden per-theme) */
-  defaultEdgeColor: "#334155",
+  defaultEdgeColor: "#3f3f3f",
   /** Minimum camera ratio (most zoomed in) */
   minCameraRatio: 0.02,
   /** Maximum camera ratio (most zoomed out) */
