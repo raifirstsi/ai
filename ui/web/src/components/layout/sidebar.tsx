@@ -68,14 +68,14 @@ export function Sidebar({ collapsed, onNavItemClick }: SidebarProps) {
       }}
     >
       {/* Logo / title */}
-      <div className="flex h-14 items-center border-b px-4">
+      <div className="flex h-14 shrink-0 items-center border-b px-4">
         {!collapsed && (
           <div className="flex items-center gap-2.5">
-            <img src="/raifirst-logo.webp" alt="RAIFIRST AI" className="raifirst-logo h-auto w-44" />
+            <img src="/raifirst-logo.webp" alt="RAIFIRST AI" width={1672} height={351} className="raifirst-logo h-auto w-28 lg:w-32" />
           </div>
         )}
         {collapsed && (
-          <img src="/raifirst-mark.png" alt="RAIFIRST AI" className="raifirst-mark mx-auto h-8 w-8" />
+          <img src="/raifirst-mark.png" alt="RAIFIRST AI" className="raifirst-mark mx-auto h-7 w-7" />
         )}
       </div>
 

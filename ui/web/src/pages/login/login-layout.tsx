@@ -17,7 +17,7 @@ export function LoginLayout({ children, subtitle }: LoginLayoutProps) {
       window.matchMedia("(prefers-color-scheme: dark)").matches);
 
   return (
-    <div className="relative flex min-h-dvh items-center justify-center bg-background px-4">
+    <div className="relative flex h-dvh items-start justify-center overflow-y-auto bg-background px-4 py-8">
       <button
         type="button"
         onClick={() => setTheme(isDark ? "light" : "dark")}
@@ -27,12 +27,13 @@ export function LoginLayout({ children, subtitle }: LoginLayoutProps) {
       >
         {isDark ? <Sun className="h-4 w-4" /> : <Moon className="h-4 w-4" />}
       </button>
-      <div className="w-full max-w-sm space-y-6 rounded-lg border bg-card p-6 shadow-sm sm:p-8">
-        <div className="text-center">
-          <img src="/raifirst-logo.webp" alt="RAIFIRST" className="raifirst-logo mx-auto mb-5 h-auto w-60 max-w-full" />
-          <h1 className="text-3xl font-bold tracking-tight">RAIFIRST AI</h1>
+      <div className="my-auto w-full max-w-sm shrink-0 space-y-6 rounded-lg border bg-card p-6 shadow-sm sm:p-8">
+        <div className="space-y-3 text-center">
+          <h1>
+            <img src="/raifirst-logo.webp" alt="RAIFIRST" width={1672} height={351} className="raifirst-logo mx-auto h-auto w-40 max-w-full sm:w-44" />
+          </h1>
           {subtitle && (
-            <p className="mt-2 text-sm text-muted-foreground">{subtitle}</p>
+            <p className="text-sm text-muted-foreground">{subtitle}</p>
           )}
         </div>
         {children}
