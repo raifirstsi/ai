@@ -6,6 +6,14 @@ exec 8>/run/lock/raifirst-ai-backup.lock
 flock -w 900 8 || { echo 'Another backup did not finish within 15 minutes.' >&2; exit 1; }
 base=/opt/raifirst-ai
 destination=/var/backups/raifirst-ai
+# Preserve free space for the other projects before allocating temporary archives.
+python3 - <<'PY'
+import shutil, subprocess, sys
+size = int(subprocess.check_output(['du', '-sb', '/opt/raifirst-ai/state']).split()[0])
+free = shutil.disk_usage('/var/backups/raifirst-ai').free
+if free < 8 * 1024**3 + 4 * size:
+    sys.exit('Backup paused: insufficient space while preserving an 8 GiB reserve for other projects.')
+PY
 work=$(mktemp -d "$destination/.working.XXXXXX")
 trap 'rm -rf -- "$work"' EXIT
 cd "$base/source"
